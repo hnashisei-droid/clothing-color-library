@@ -82,7 +82,8 @@ async function onlineColorName(hex,serial){
     const english=String(data?.name?.value||'').trim();
     if(!english)throw new Error('色名なし');
     // The Color API provides English names; keep them as-is rather than inventing a Japanese translation.
-    const kana=colorNameInKana(english,hex);\n    field.value=kana;
+    const kana=colorNameInKana(english,hex);
+    field.value=kana;
     field.placeholder='色名を編集できます';
     const message=document.getElementById('message');
     message.textContent='オンライン候補：'+english+' → '+kana+'。辞書にない名称は近似色の仮称を使用します。必要なら修正してください。';
